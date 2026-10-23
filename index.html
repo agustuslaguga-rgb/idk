@@ -1,0 +1,154 @@
+
+<header class="game-header">
+  <div class="logo">STREET LEGENDS</div>
+  <nav class="nav-menu">
+    <a href="#" class="active">Garage</a>
+    <a href="#upgrades">Upgrades</a>
+    <a href="#race">Race</a>
+  </nav>
+</header>
+
+<main class="game-screen">
+  <h1 class="game-title">Build Your Machine</h1>
+  <p class="game-subtitle">
+    Customize every part. Build your own legend.
+  </p>
+
+  <div class="game-viewport">
+    <!-- Connect your 3D game canvas here -->
+    <div class="game-hud">
+      <div class="hud-panel">
+        <div class="hud-label">Current Vehicle</div>
+        <div class="hud-value">RX-7</div>
+      </div>
+      <div class="hud-panel">
+        <div class="hud-label">Engine Power</div>
+        <div class="hud-value">450 HP</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="performance-stats">
+    <div class="performance-card">
+      <span>Top Speed</span>
+      <strong>280 KM/H</strong>
+    </div>
+    <div class="performance-card">
+      <span>Horsepower</span>
+      <strong>450 HP</strong>
+    </div>
+    <div class="performance-card">
+      <span>Acceleration</span>
+      <strong>4.2 SEC</strong>
+    </div>
+    <div class="performance-card">
+      <span>Handling</span>
+      <strong>85 / 100</strong>
+    </div>
+  </div>
+</main>
+
+<section class="garage-layout">
+  <div class="panel">
+    <h2 class="panel-title">Your Cars</h2>
+    <div class="car-list">
+      <div class="car-option selected">
+        <h3>Street RX</h3>
+        <p>Sports car</p>
+      </div>
+      <div class="car-option">
+        <h3>Night Runner</h3>
+        <p>Supercar</p>
+      </div>
+      <div class="car-option">
+        <h3>Desert Beast</h3>
+        <p>Off-road</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2 class="panel-title">Customize</h2>
+
+    <div class="custom-section">
+      <label>Paint Color</label>
+      <div class="color-picker">
+        <button class="color-swatch selected"
+          style="background:#00eaff"
+          aria-label="Cyan paint"></button>
+        <button class="color-swatch"
+          style="background:#ff365d"
+          aria-label="Red paint"></button>
+        <button class="color-swatch"
+          style="background:#a855f7"
+          aria-label="Purple paint"></button>
+        <button class="color-swatch"
+          style="background:#f3f7ff"
+          aria-label="White paint"></button>
+      </div>
+    </div>
+
+    <div class="custom-section">
+      <label>Engine</label>
+      <select class="custom-select">
+        <option>Stock V6</option>
+        <option>Twin-Turbo V6</option>
+        <option>V8 Racing Engine</option>
+        <option>V12 Hyper Engine</option>
+        <option>Electric Performance Motor</option>
+      </select>
+    </div>
+
+    <div class="custom-section">
+      <label>Body Kit</label>
+      <select class="custom-select">
+        <option>Standard Body</option>
+        <option>Widebody Kit</option>
+        <option>Street Racing Kit</option>
+        <option>Track Aero Kit</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary btn-block">
+      Apply Build
+    </button>
+  </div>
+
+  <div class="panel" id="upgrades">
+    <h2 class="panel-title">Performance Parts</h2>
+
+    <div class="upgrade-item">
+      <h3>Turbocharger</h3>
+      <p>Increase engine power.</p>
+      <div class="upgrade-stats">
+        <span>+80 HP</span>
+        <span class="upgrade-price">$2,500</span>
+      </div>
+      <div class="stat-bar">
+        <div class="stat-fill" style="width:80%"></div>
+      </div>
+      <button class="btn btn-block">Install Part</button>
+    </div>
+
+    <div class="upgrade-item">
+      <h3>Sport Suspension</h3>
+      <p>Improve cornering and stability.</p>
+      <div class="upgrade-stats">
+        <span>+15 Handling</span>
+        <span class="upgrade-price">$1,200</span>
+      </div>
+      <div class="stat-bar">
+        <div class="stat-fill" style="width:65%"></div>
+      </div>
+      <button class="btn btn-block">Install Part</button>
+    </div>
+
+    <button class="btn btn-primary btn-block" id="race">
+      Start Racing
+    </button>
+  </div>
+</section>
+
+<footer class="game-footer">
+  STREET LEGENDS — BUILD IT. TUNE IT. DRIVE IT.
+</footer>
