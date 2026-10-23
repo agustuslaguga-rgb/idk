@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #080b12;
+  --panel: #111824;
+  --panel-light: #1b2636;
+  --neon: #00eaff;
+  --neon-purple: #a855f7;
+  --danger: #ff365d;
+  --text: #f3f7ff;
+  --muted: #8494aa;
+  --border: rgba(0, 234, 255, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+/* HEADER */
+
+.game-header {
+  height: 75px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8, 11, 18, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--neon);
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.25s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--neon);
+}
+
+/* MAIN GAME SCREEN */
+
+.game-screen {
+  position: relative;
+  min-height: 650px;
+  padding: 30px 4%;
+  background:
+    radial-gradient(ellipse at 50% 65%,
+      rgba(0, 234, 255, 0.10), transparent 55%),
+    linear-gradient(180deg, #101a2a, #080b12 80%);
+}
+
+.game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(26px, 4vw, 48px);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.game-subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+/* 3D GAME VIEWPORT
+   Put your actual 3D game canvas here. */
+
+.game-viewport {
+  position: relative;
+  width: 100%;
+  height: min(65vh, 600px);
+  min-height: 350px;
+  margin: 25px auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 50% 90%,
+      rgba(0, 234, 255, 0.18), transparent 55%),
+    linear-gradient(180deg, #15253a, #080b12);
+  box-shadow: 0 0 40px rgba(0, 234, 255, 0.08);
+}
+
+.game-viewport canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+
+/* GAME HUD */
+
+.game-hud {
+  position: absolute;
+  inset: 20px;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hud-panel {
+  padding: 14px 20px;
+  background: rgba(8, 11, 18, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.hud-label {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hud-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 26px;
+  color: var(--neon);
+}
+
+/* GARAGE LAYOUT */
+
+.garage-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 300px;
+  gap: 20px;
+  padding: 30px 4%;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.panel-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* CAR SELECTION */
+
+.car-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.car-option {
+  padding: 14px;
+  cursor: pointer;
+  background: var(--panel-light);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.car-option:hover,
+.car-option.selected {
+  border-color: var(--neon);
+  background: rgba(0, 234, 255, 0.08);
+  transform: translateX(3px);
+}
+
+.car-option h3 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.car-option p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CUSTOMIZATION CONTROLS */
+
+.custom-section {
+  margin-bottom: 24px;
+}
+
+.custom-section label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.color-swatch {
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.color-swatch:hover,
+.color-swatch.selected {
+  border-color: white;
+  transform: scale(1.15);
+  box-shadow: 0 0 14px rgba(0, 234, 255, 0.6);
+}
+
+.custom-select {
+  width: 100%;
+  padding: 12px;
+  color: var(--text);
+  background: #080d16;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+}
+
+.custom-select:focus {
+  border-color: var(--neon);
+}
+
+/* ENGINE AND PARTS UPGRADES */
+
+.upgrade-item {
+  padding: 15px;
+  margin-bottom: 12px;
+  background: var(--panel-light);
+  border-radius: 8px;
+  border-left: 3px solid var(--neon-purple);
+}
+
+.upgrade-item h3 {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.upgrade-item p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.upgrade-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0;
+  font-weight: 700;
+}
+
+.upgrade-price {
+  color: var(--neon);
+}
+
+.stat-bar {
+  width: 100%;
+  height: 6px;
+  margin-top: 8px;
+  background: #283449;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon));
+  border-radius: inherit;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  color: var(--text);
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: #001016;
+  background: var(--neon);
+  border-color: var(--neon);
+}
+
+.btn-primary:hover {
+  background: #8bf5ff;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.4);
+}
+
+.btn-danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* CAR PERFORMANCE */
+
+.performance-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.performance-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.performance-card span {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.performance-card strong {
+  display: block;
+  margin-top: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: var(--neon);
+}
+
+/* GARAGE TABS */
+
+.garage-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.garage-tab {
+  padding: 10px 15px;
+  color: var(--muted);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.garage-tab:hover,
+.garage-tab.active {
+  color: var(--neon);
+  border-color: var(--neon);
+}
+
+/* FOOTER */
+
+.game-footer {
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
+/* MOBILE SUPPORT */
+
+@media (max-width: 1050px) {
+  .garage-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .garage-layout > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .game-header {
+    height: auto;
+    padding: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .game-viewport {
+    height: 380px;
+  }
+
+  .garage-layout {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .garage-layout > :last-child {
+    grid-column: auto;
+  }
+
+  .performance-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hud-panel {
+    padding: 10px;
+  }
+
+  .hud-value {
+    font-size: 19px;
+  }
+}
